@@ -1,7 +1,7 @@
 {
 "sections" : [
         {
-                "sectionTitle" : "Mental Health",
+                "sectionTitle" : [{"title":"Mental Health"}],
                 "content" : [
                         {
                         "header" : "Ask for Jake",
@@ -12,7 +12,7 @@
                 ]
         },
         {
-                "sectionTitle" : "Housing and General Advice",
+                "sectionTitle" : [{"title":"Housing and General Advice"}],
                 "content" : [
                         {
                         "header" : "Housing Advice",
@@ -24,7 +24,7 @@
                 ]
         },
         {
-                "sectionTitle" : "Careers
+                "sectionTitle" : [{"title":"Careers"}],
                 "content" : [
                         {
                         "header" : "Start Profile",
