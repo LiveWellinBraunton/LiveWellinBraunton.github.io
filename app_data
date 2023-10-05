@@ -4,11 +4,11 @@
     "var2" : 39
   },
 "testJson2" : {
-    "var1" : "testvar1"
+    "var1" : "testvar1",
     "var2" : "testvar2"
   },
 "testJson3" : {
-    "list1" : ["item1","item2","item3"]
+    "list1" : ["item1","item2","item3"],
     "list2" : [32, 41, 8924971587124]
-  },
+  }
 }
