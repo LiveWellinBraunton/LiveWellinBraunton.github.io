@@ -8,6 +8,12 @@
                         "paragraph" : "Local support and drop in centre.",
                         "uri" : "https://askforjake.org.uk/",
                         "buttonText" : "Learn more"
+                        },
+                        {
+                        "header" : "Early Help 4 Mental Health",
+                        "paragraph" : "This service ensures that any young person aged 11 to 25 years can access free and confidential counselling, mentoring and a range of support services.",
+                        "uri" : "https://www.youngdevon.org/wellbeing/early-help-4-mental-health",
+                        "buttonText" : "Learn more"
                         }
                 ]
         },
@@ -16,9 +22,15 @@
                 "content" : [
                         {
                         "header" : "Housing Advice",
-                        "paragraph" : "Young persons housing advice Devon\nAmber service.",
+                        "paragraph" : "Young persons housing advice Devon Amber service.",
                         "uri" : "http://www.yhdevon.co.uk/",
                         "buttonText" : "Learn more"
+                        },
+                        {
+                        "header" : "Child Employment Advice",
+                        "paragraph" : "Child Employment\nLaw and Support",
+                        "uri" : "https://www.devon.gov.uk/educationandfamilies/young-people/child-employment-and-entertainment/",
+                        "buttonText" : "Test Alternative button text"
                         }
                 ]
         },
@@ -29,6 +41,12 @@
                         "header" : "Start Profile",
                         "paragraph" : "Explore career options.",
                         "uri" : "https://careers.startprofile.com/page/home-page",
+                        "buttonText" : "Learn more"
+                        },
+                        {
+                        "header" : "The Student Room",
+                        "paragraph" : "Talk to current students and ask questions.",
+                        "uri" : "https://www.thestudentroom.co.uk/",
                         "buttonText" : "Learn more"
                         }
                 ]
