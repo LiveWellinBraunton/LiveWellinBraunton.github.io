@@ -1,29 +1,38 @@
 {
-"support" : {
-        "mentalHealth" : [
-                {
-                "header" : "Ask for Jake",
-                "paragraph" : "Local support and drop in centre.",
-                "uri" : "https://askforjake.org.uk/",
-                "buttonText" : "Learn more"
-                }
-        ],
-        "housingAndAdvice" : [
-                {
-                "header" : "Housing Advice",
-                "paragraph" : "Young persons housing advice Devon
-Amber service.",
-                "uri" : "http://www.yhdevon.co.uk/",
-                "buttonText" : "Learn more"
-                }
-        ],
-        "careers" : [
-                {
-                "header" : "Start Profile",
-                "paragraph" : "Explore career options.",
-                "uri" : "https://careers.startprofile.com/page/home-page",
-                "buttonText" : "Learn more"
-                }
-        ]
-}
+"sections" : [
+        {
+                "sectionTitle" : "Mental Health",
+                "content" : [
+                        {
+                        "header" : "Ask for Jake",
+                        "paragraph" : "Local support and drop in centre.",
+                        "uri" : "https://askforjake.org.uk/",
+                        "buttonText" : "Learn more"
+                        }
+                ]
+        },
+        {
+                "sectionTitle" : "Housing and General Advice",
+                "content" : [
+                        {
+                        "header" : "Housing Advice",
+                        "paragraph" : "Young persons housing advice Devon
+        Amber service.",
+                        "uri" : "http://www.yhdevon.co.uk/",
+                        "buttonText" : "Learn more"
+                        }
+                ]
+        },
+        {
+                "sectionTitle" : "Careers
+                "content" : [
+                        {
+                        "header" : "Start Profile",
+                        "paragraph" : "Explore career options.",
+                        "uri" : "https://careers.startprofile.com/page/home-page",
+                        "buttonText" : "Learn more"
+                        }
+                ]
+        }
+]
 }
