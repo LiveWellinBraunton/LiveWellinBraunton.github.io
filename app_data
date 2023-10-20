@@ -2,24 +2,7 @@
 { "sectionTitle" : [{"title":"Mental Health"}],
 "content" : [
 {"header" : "Ask for Jake",
-"paragraph" : "Local support and drop in centre.",
-"uri" : "https://askforjake.org.uk/",
-"buttonText" : "Learn More"
-},
-{"header" : "Early Help 4 Mental Health",
-"paragraph" : "This service ensures that any young person aged 11 to 25 years can access free and confidential counselling, mentoring and a range of support services.",
-"uri" : "https://www.youngdevon.org/wellbeing/early-help-4-mental-health",
-"buttonText" : "Learn More"
-}]},
-{ "sectionTitle" : [{"title":"Housing and General Advice"}],
-"content" : [
-{"header" : "Housing Advice",
-"paragraph" : "Young persons housing advice",
-"uri" : "http://www.yhdevon.co.uk/",
-"buttonText" : "Learn More"
-},
-{"header" : "Child Employment Advice",
-"paragraph" : "Child Employment\nLaw and Support",
-"uri" : "",
-"buttonText" : ""
-}]}
+"paragraph" : "mental health resources",
+"uri" : "https://askforjake.co.uk",
+"buttonText" : "learn more"
+}]}]}
