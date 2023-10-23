@@ -110,9 +110,9 @@ dataForm.addEventListener("submit", (e) => {
 
   let sections = document.getElementsByName("section")
   for (var i = 0; i < sections.length; i++) {
-	  outputJSON += '\n{ "sectionTitle" : [{"title":"' + sections[i].children[1].value + '"}],\n"content" : ['
+	  outputJSON += '\n{ "sectionTitle" : [{"title":"' + sections[i].children[2].value + '"}],\n"content" : ['
 
-	  let contents = sections[i].children[2];
+	  let contents = sections[i].children[3];
 	  for (var j = 0; j < contents.children.length-1; j++) {
 	    let content = contents.children[j];
 	    outputJSON += '\n{'
