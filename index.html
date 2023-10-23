@@ -1,1 +1,161 @@
-<h1>Test github pages</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LW App Data Editor</title>
+    <style>
+        h1{font-family:sans-serif}
+        p{font-family:sans-serif;
+        margin-bottom:4px;}
+        label{font-family:sans-serif}
+        fieldset{padding:16px;
+            border-width:4px;
+            margin:2px;
+            width:fit-content;
+            padding-right:32px;}
+        button{margin:4px;}
+        button.delete{float: right;
+        margin-right:-16px;}
+
+    </style>
+</head>
+<body>
+<h1>LW App Data Editor</h1>
+<form id="AppDataForm">
+    <div id="sections" name="sections">
+        <fieldset name="section">
+            <button type="button" onclick="deleteElement(this)" class="delete">x</button>
+            <p>Section Title</p>
+            <input type="text" name="sectionTitle">
+
+            <div name="contentBox">
+                <fieldset name="content">
+                    <button type="button" onclick="deleteElement(this)" class="delete">x</button>
+                    <p>Header:</p>
+                    <input type="text" name="headerInput"><br>
+
+                    <p>Paragraph:</p>
+                    <textarea name="paragraphInput" rows="5" cols="38"></textarea><br>
+
+                    <p>Button URL:</p>
+                    <input type="text" name="uriInput" size="24" placeholder="Leave blank to remove button."><br>
+
+                    <p>Button Text:</p>
+                    <input type="text" name="buttonInput"><br>
+
+                </fieldset>
+                <button type="button" onclick="newContent(this)">Add Content</button>
+            </div>
+
+        </fieldset>
+        <button type="button" onclick="newSection(this)">Add Section</button>
+    </div>
+
+    <button type="submit">Generate</button>
+</form>
+<br>
+<p>Output:</p>
+<textarea readonly="true" rows="4" cols="50" id="outputDisplay"></textarea>
+
+<script>
+
+function deleteElement(self) {
+    self.parentNode.remove();
+}
+
+function clearChildren(element) {
+   for (var i = 0; i < element.childNodes.length; i++) {
+      var e = element.childNodes[i];
+      if (e.tagName) switch (e.tagName.toLowerCase()) {
+         case 'input':
+            switch (e.type) {
+               case "radio":
+               case "checkbox": e.checked = false; break;
+               case "button":
+               case "submit":
+               case "image": break;
+               default: e.value = ''; break;
+            }
+            break;
+         case 'select': e.selectedIndex = 0; break;
+         case 'textarea': e.innerHTML = ''; break;
+         default: clearChildren(e);
+      }
+   }
+}
+
+var sectionFieldSet = document.getElementsByName("section")[0].cloneNode(true);
+var contentFieldSet = document.getElementsByName("content")[0].cloneNode(true);
+
+function newContent(self) {
+    let btn = self
+    btn.parentNode.insertBefore(contentFieldSet.cloneNode(true),btn)
+}
+
+function newSection(self) {
+    let btn = self
+    btn.parentNode.insertBefore(sectionFieldSet.cloneNode(true),btn)
+}
+
+function mapToJSON(map) {
+  return JSON.stringify(Object.fromEntries(map));
+}
+
+let dataForm = document.getElementById("AppDataForm");
+
+dataForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let outputJSON = '{"sections" : ['
+
+  let sections = document.getElementsByName("section")
+  for (var i = 0; i < sections.length; i++) {
+	  outputJSON += '\n{ "sectionTitle" : [{"title":"' + sections[i].children[1].value + '"}],\n"content" : ['
+
+	  let contents = sections[i].children[2];
+	  for (var j = 0; j < contents.children.length-1; j++) {
+	    let content = contents.children[j];
+	    outputJSON += '\n{'
+	    for (var k=0; k < content.children.length; k++) {
+	        let inp = content.children[k]
+
+	        if(inp.name=="headerInput"){
+                outputJSON += '"header" : "' + inp.value + '",\n'
+                }
+	        if(inp.name=="paragraphInput"){
+                outputJSON += '"paragraph" : "' + inp.value + '",\n'
+                }
+            if(inp.name=="uriInput"){
+                outputJSON += '"uri" : "' + inp.value + '",\n'
+                }
+            if(inp.name=="buttonInput"){
+                outputJSON += '"buttonText" : "' + inp.value + '"\n'
+                }
+	    outputJSON += '},'
+	    }
+	    outputJSON = outputJSON.slice(0,-1)
+	  outputJSON += ']},'
+	  }
+	  outputJSON = outputJSON.slice(0,-1);
+    outputJSON += ']}'
+	}
+  console.log(outputJSON);
+  let outputBox = document.getElementById("outputDisplay")
+  outputBox.value = outputJSON;
+  outputBox.rows = (outputJSON.match(/\n/g) || '').length + 1;
+
+  let arr = outputJSON.split(/\r\n|\r|\n/)
+  var lgth = 0;
+
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].length > lgth) {
+      var lgth = arr[i].length;
+    }
+  }
+  outputBox.cols = lgth;
+  }
+);
+
+</script>
+</body>
+</html>
